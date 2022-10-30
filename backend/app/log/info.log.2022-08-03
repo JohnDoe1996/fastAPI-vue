@@ -1,0 +1,35 @@
+INFO 2022-08-03 23:22:26 Stopping reloader process [27113]
+INFO 2022-08-03 23:22:57 Will watch for changes in these directories: ['/Users/beginner/Projects/temp/fastapi-vue/backend/app']
+INFO 2022-08-03 23:22:57 Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO 2022-08-03 23:22:57 Started reloader process [61882] using statreload
+INFO 2022-08-03 23:22:58 Started server process [61884]
+INFO 2022-08-03 23:22:58 Waiting for application startup.
+INFO 2022-08-03 23:22:58 Application startup complete.
+INFO 2022-08-03 23:23:08 Will watch for changes in these directories: ['/Users/beginner/Projects/temp/fastapi-vue/backend/app']
+ERROR 2022-08-03 23:23:08 [Errno 48] Address already in use
+INFO 2022-08-03 23:23:40 Will watch for changes in these directories: ['/Users/beginner/Projects/temp/fastapi-vue/backend/app']
+ERROR 2022-08-03 23:23:40 [Errno 48] Address already in use
+INFO 2022-08-03 23:24:49 Shutting down
+INFO 2022-08-03 23:24:49 Waiting for application shutdown.
+INFO 2022-08-03 23:24:49 Application shutdown complete.
+INFO 2022-08-03 23:24:49 Finished server process [61884]
+INFO 2022-08-03 23:25:03 Will watch for changes in these directories: ['/Users/beginner/Projects/temp/fastapi-vue/backend/app']
+INFO 2022-08-03 23:25:03 Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO 2022-08-03 23:25:03 Started reloader process [61943] using statreload
+INFO 2022-08-03 23:25:04 Started server process [61945]
+INFO 2022-08-03 23:25:04 Waiting for application startup.
+INFO 2022-08-03 23:25:04 Application startup complete.
+WARNING 2022-08-03 23:44:14 StatReload detected file change in 'apps/user/views.py'. Reloading...
+INFO 2022-08-03 23:44:14 Shutting down
+INFO 2022-08-03 23:44:14 Waiting for application shutdown.
+INFO 2022-08-03 23:44:14 Application shutdown complete.
+INFO 2022-08-03 23:44:14 Finished server process [61945]
+INFO 2022-08-03 23:44:15 Started server process [62360]
+INFO 2022-08-03 23:44:15 Waiting for application startup.
+INFO 2022-08-03 23:44:15 Application startup complete.
+WARNING 2022-08-04 00:02:23 StatReload detected file change in 'core/constants.py'. Reloading...
+INFO 2022-08-04 00:02:23 Shutting down
+INFO 2022-08-04 00:02:23 Waiting for application shutdown.
+INFO 2022-08-04 00:02:23 Application shutdown complete.
+INFO 2022-08-04 00:02:23 Finished server process [62360]
+WARNING 2022-08-04 00:17:02 StatReload detected file change in 'core/constants.py'. Reloading...

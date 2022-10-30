@@ -1,0 +1,1037 @@
+ERROR 2022-07-04 10:51:16  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 217, in app
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 526, in solve_dependencies
+    solved = await run_in_threadpool(call, **sub_values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 56, in get_current_user
+    token_data = check_jwt_token(token)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 35, in check_jwt_token
+    redis = request.app.state.redis  # type: Redis
+AttributeError: 'str' object has no attribute 'app'
+ERROR 2022-07-04 10:53:54  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 217, in app
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 526, in solve_dependencies
+    solved = await run_in_threadpool(call, **sub_values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 56, in get_current_user
+    token_data = check_jwt_token(token)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 35, in check_jwt_token
+    redis = request.app.state.redis  # type: Redis
+AttributeError: 'str' object has no attribute 'app'
+ERROR 2022-07-04 10:54:27  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 217, in app
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 526, in solve_dependencies
+    solved = await run_in_threadpool(call, **sub_values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 57, in get_current_user
+    token_data = check_jwt_token(token)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 36, in check_jwt_token
+    redis = request.app.state.redis  # type: Redis
+AttributeError: 'str' object has no attribute 'app'
+ERROR 2022-07-04 10:59:55  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 217, in app
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 524, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 56, in get_current_user
+    user = curd_user.get(db, _id=token_data.sub)
+AttributeError: 'coroutine' object has no attribute 'sub'
+ERROR 2022-07-04 11:38:01  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 217, in app
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 495, in solve_dependencies
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 524, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 44, in check_jwt_token
+    uid = await redis.get(constants.REDIS_KEY_LOGIN_TOKEN_KEY_PREFIX + token)
+AttributeError: 'function' object has no attribute 'get'
+ERROR 2022-07-04 18:21:56  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/user/views.py", line 85, in submitRegister
+    if curd_user.getByUsername(register_data.username):
+TypeError: getByUsername() missing 1 required keyword-only argument: 'username'
+ERROR 2022-07-04 18:34:06  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/user/views.py", line 85, in submitRegister
+    if curd_user.getByUsername(db, register_data.username):
+TypeError: getByUsername() takes 2 positional arguments but 3 were given
+ERROR 2022-07-04 18:35:41  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/user/views.py", line 109, in submitRegister
+    email.send(user_data['email'], "register", email_data)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/utils/email.py", line 40, in send
+    content = self.renderTemplate(template_name, data)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/utils/email.py", line 35, in renderTemplate
+    temp = self.ENV.get_template(f"{template_name}.html")
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/jinja2/loaders.py", line 214, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: {'url': 'http://127.0.0.1:80801682052756c74086919f1f19f460dbfe'}.html
+ERROR 2022-07-05 16:53:50  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 217, in app
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 495, in solve_dependencies
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 524, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 55, in check_jwt_token
+    uid = await redis.get(constants.REDIS_KEY_LOGIN_TOKEN_KEY_PREFIX + token)
+TypeError: can only concatenate str (not "NoneType") to str
+ERROR 2022-07-05 16:55:50  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 217, in app
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 495, in solve_dependencies
+    solved_result = await solve_dependencies(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/dependencies/utils.py", line 524, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/deps.py", line 59, in check_jwt_token
+    payload = jwt.decode(token, settings.SECRET_KEY, algorithms=settings.JWT_ALGORITHM)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/jose/jwt.py", line 142, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/jose/jws.py", line 70, in verify
+    header, payload, signing_input, signature = _load(token)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/jose/jws.py", line 176, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+AttributeError: 'NoneType' object has no attribute 'rsplit'
+ERROR 2022-07-05 17:59:42  "on.py" "send" "132" Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 627, in lifespan
+    await receive()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/lifespan/on.py", line 135, in receive
+    return await self.receive_queue.get()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/asyncio/queues.py", line 166, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+ERROR 2022-07-06 15:18:12  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 50, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 17, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 66, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2146, in do_init
+    self._generate_backref()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2426, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'user' on relationship 'Users.user_role': property of that name exists on mapper 'mapped class UserRole->t_user_role'
+ERROR 2022-07-06 15:23:58  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 50, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 17, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 66, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2146, in do_init
+    self._generate_backref()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2426, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'role' on relationship 'Users.user_role': property of that name exists on mapper 'mapped class UserRole->t_user_role'
+ERROR 2022-07-06 15:25:14  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 50, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 17, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 66, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2141, in do_init
+    self._process_dependent_arguments()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2204, in _process_dependent_arguments
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: secondary argument <class 'apps.permission.models.user.UserRole'> passed to to relationship() Users.user_role must be a Table object or other FROM clause; can't send a mapped class directly as rows in 'secondary' are persisted independently of a class that is mapped to that same table.
+ERROR 2022-07-06 15:25:49  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 50, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 17, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 66, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2141, in do_init
+    self._process_dependent_arguments()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2204, in _process_dependent_arguments
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: secondary argument <class 'apps.permission.models.user.UserRole'> passed to to relationship() Users.user_role must be a Table object or other FROM clause; can't send a mapped class directly as rows in 'secondary' are persisted independently of a class that is mapped to that same table.
+ERROR 2022-07-06 15:27:05  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 50, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 17, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 66, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2146, in do_init
+    self._generate_backref()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2426, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'role' on relationship 'Roles.role_menu': property of that name exists on mapper 'mapped class RoleMenu->t_role_menu'
+ERROR 2022-07-06 15:27:24  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 50, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 17, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 66, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2146, in do_init
+    self._generate_backref()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2426, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'role' on relationship 'Roles.role_menu': property of that name exists on mapper 'mapped class RoleMenu->t_role_menu'
+ERROR 2022-07-06 15:27:48  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 50, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 17, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 66, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2146, in do_init
+    self._generate_backref()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2426, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'role' on relationship 'Roles.role_menu': property of that name exists on mapper 'mapped class RoleMenu->t_role_menu'
+ERROR 2022-07-06 15:28:02  "h11_impl.py" "run_asgi" "369" Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 50, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 17, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 66, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2141, in do_init
+    self._process_dependent_arguments()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2236, in _process_dependent_arguments
+    self.target = self.entity.persist_selectable
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1113, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2103, in entity
+    argument = self._clsregistry_resolve_name(self.argument)()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/clsregistry.py", line 397, in _resolve_name
+    self._raise_for_name(name, err)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/clsregistry.py", line 375, in _raise_for_name
+    util.raise_(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: When initializing mapper mapped class Menus->t_menus, expression 'Role_Menu' failed to locate a name ('Role_Menu'). If this is a class name, consider adding this relationship() to the <class 'apps.permission.models.menu.Menus'> class after both dependent classes have been defined.

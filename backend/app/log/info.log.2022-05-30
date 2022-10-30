@@ -1,0 +1,1218 @@
+INFO 2022-05-30 00:28:01 Shutting down
+INFO 2022-05-30 00:28:02 Waiting for application shutdown.
+INFO 2022-05-30 00:28:02 Application shutdown complete.
+INFO 2022-05-30 00:28:02 Finished server process [3196]
+INFO 2022-05-30 00:28:03 Started server process [5104]
+INFO 2022-05-30 00:28:03 Waiting for application startup.
+INFO 2022-05-30 00:28:03 Application startup complete.
+INFO 2022-05-30 00:52:15 Shutting down
+INFO 2022-05-30 00:52:15 Waiting for application shutdown.
+INFO 2022-05-30 00:52:15 Application shutdown complete.
+INFO 2022-05-30 00:52:15 Finished server process [5104]
+INFO 2022-05-30 00:52:16 Started server process [5800]
+INFO 2022-05-30 00:52:16 Waiting for application startup.
+INFO 2022-05-30 00:52:16 Application startup complete.
+INFO 2022-05-30 00:52:42 Shutting down
+INFO 2022-05-30 00:52:42 Waiting for application shutdown.
+INFO 2022-05-30 00:52:42 Application shutdown complete.
+INFO 2022-05-30 00:52:42 Finished server process [5800]
+INFO 2022-05-30 00:52:43 Will watch for changes in these directories: ['/Users/beginner/Projects/temp/fastapi-vue/backend/app']
+INFO 2022-05-30 00:52:43 Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO 2022-05-30 00:52:43 Started reloader process [5812] using statreload
+INFO 2022-05-30 00:52:44 Started server process [5814]
+INFO 2022-05-30 00:52:44 Waiting for application startup.
+INFO 2022-05-30 00:52:44 Application startup complete.
+WARNING 2022-05-30 00:53:21 StatReload detected file change in 'apps/__init__.py'. Reloading...
+INFO 2022-05-30 00:53:22 Shutting down
+INFO 2022-05-30 00:53:22 Waiting for application shutdown.
+INFO 2022-05-30 00:53:22 Application shutdown complete.
+INFO 2022-05-30 00:53:22 Finished server process [5814]
+INFO 2022-05-30 00:54:34 Stopping reloader process [5812]
+INFO 2022-05-30 01:10:50 Will watch for changes in these directories: ['/Users/beginner/Projects/temp/fastapi-vue/backend/app']
+INFO 2022-05-30 01:10:50 Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO 2022-05-30 01:10:50 Started reloader process [6275] using statreload
+INFO 2022-05-30 01:10:50 Started server process [6277]
+INFO 2022-05-30 01:10:50 Waiting for application startup.
+INFO 2022-05-30 01:10:50 Application startup complete.
+WARNING 2022-05-30 01:12:47 StatReload detected file change in 'apps/permission/models/user.py'. Reloading...
+INFO 2022-05-30 01:12:48 Shutting down
+INFO 2022-05-30 01:12:48 Waiting for application shutdown.
+INFO 2022-05-30 01:12:48 Application shutdown complete.
+INFO 2022-05-30 01:12:48 Finished server process [6277]
+INFO 2022-05-30 01:12:48 Started server process [6323]
+INFO 2022-05-30 01:12:48 Waiting for application startup.
+INFO 2022-05-30 01:12:48 Application startup complete.
+INFO 2022-05-30 01:12:56 Shutting down
+INFO 2022-05-30 01:12:56 Waiting for application shutdown.
+INFO 2022-05-30 01:12:56 Application shutdown complete.
+INFO 2022-05-30 01:12:56 Finished server process [6323]
+INFO 2022-05-30 01:12:56 Stopping reloader process [6275]
+INFO 2022-05-30 01:12:57 Will watch for changes in these directories: ['/Users/beginner/Projects/temp/fastapi-vue/backend/app']
+INFO 2022-05-30 01:12:57 Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO 2022-05-30 01:12:57 Started reloader process [6332] using statreload
+INFO 2022-05-30 01:12:57 Started server process [6334]
+INFO 2022-05-30 01:12:57 Waiting for application startup.
+INFO 2022-05-30 01:12:57 Application startup complete.
+ERROR 2022-05-30 01:15:54 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 34, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 14, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 51, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2146, in do_init
+    self._generate_backref()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2426, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'user' on relationship 'Users.user_role': property of that name exists on mapper 'mapped class UserRole->user_role'
+INFO 2022-05-30 10:14:18 Shutting down
+INFO 2022-05-30 10:14:18 Waiting for application shutdown.
+INFO 2022-05-30 10:14:18 Application shutdown complete.
+INFO 2022-05-30 10:14:18 Finished server process [6334]
+INFO 2022-05-30 10:14:18 Stopping reloader process [6332]
+INFO 2022-05-30 10:14:19 Will watch for changes in these directories: ['/Users/beginner/Projects/temp/fastapi-vue/backend/app']
+INFO 2022-05-30 10:14:19 Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+INFO 2022-05-30 10:14:19 Started reloader process [7101] using statreload
+INFO 2022-05-30 10:14:20 Started server process [7104]
+INFO 2022-05-30 10:14:20 Waiting for application startup.
+INFO 2022-05-30 10:14:20 Application startup complete.
+WARNING 2022-05-30 10:15:16 StatReload detected file change in 'apps/permission/schemas/user_schemas.py'. Reloading...
+INFO 2022-05-30 10:15:16 Shutting down
+INFO 2022-05-30 10:15:16 Waiting for application shutdown.
+INFO 2022-05-30 10:15:16 Application shutdown complete.
+INFO 2022-05-30 10:15:16 Finished server process [7104]
+INFO 2022-05-30 10:15:17 Started server process [7133]
+INFO 2022-05-30 10:15:17 Waiting for application startup.
+INFO 2022-05-30 10:15:17 Application startup complete.
+ERROR 2022-05-30 10:34:43 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 34, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 14, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 51, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2146, in do_init
+    self._generate_backref()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2426, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'user' on relationship 'Users.user_role': property of that name exists on mapper 'mapped class UserRole->user_role'
+WARNING 2022-05-30 10:36:14 StatReload detected file change in 'apps/permission/models/user.py'. Reloading...
+INFO 2022-05-30 10:36:14 Shutting down
+INFO 2022-05-30 10:36:14 Waiting for application shutdown.
+INFO 2022-05-30 10:36:14 Application shutdown complete.
+INFO 2022-05-30 10:36:14 Finished server process [7133]
+INFO 2022-05-30 10:36:15 Started server process [7558]
+INFO 2022-05-30 10:36:15 Waiting for application startup.
+INFO 2022-05-30 10:36:15 Application startup complete.
+WARNING 2022-05-30 10:43:55 StatReload detected file change in 'apps/permission/models/user.py'. Reloading...
+INFO 2022-05-30 10:43:55 Shutting down
+INFO 2022-05-30 10:43:55 Waiting for application shutdown.
+INFO 2022-05-30 10:43:55 Application shutdown complete.
+INFO 2022-05-30 10:43:55 Finished server process [7558]
+INFO 2022-05-30 10:43:56 Started server process [7692]
+INFO 2022-05-30 10:43:56 Waiting for application startup.
+INFO 2022-05-30 10:43:56 Application startup complete.
+ERROR 2022-05-30 10:44:05 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 34, in addUser
+    curd_user.create(db, obj_in=obj)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 14, in create
+    return super().create(db, obj_in=obj_in_data, creator_id=creator_id)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 51, in create
+    db_obj = self.model(**obj_in_data)  # type: ignore
+  File "<string>", line 4, in __init__
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 474, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/event/attr.py", line 343, in __call__
+    fn(*args, **kw)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3605, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1896, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3420, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3459, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1913, in _post_configure_properties
+    prop.init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2146, in do_init
+    self._generate_backref()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2426, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'role' on relationship 'Users.user_role': property of that name exists on mapper 'mapped class UserRole->user_role'
+WARNING 2022-05-30 10:47:25 StatReload detected file change in 'apps/permission/models/user.py'. Reloading...
+INFO 2022-05-30 10:47:25 Shutting down
+INFO 2022-05-30 10:47:25 Waiting for application shutdown.
+INFO 2022-05-30 10:47:25 Application shutdown complete.
+INFO 2022-05-30 10:47:25 Finished server process [7692]
+INFO 2022-05-30 10:47:26 Started server process [7768]
+INFO 2022-05-30 10:47:26 Waiting for application startup.
+INFO 2022-05-30 10:47:26 Application startup complete.
+WARNING 2022-05-30 10:54:37 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 10:54:37 Shutting down
+INFO 2022-05-30 10:54:37 Waiting for application shutdown.
+INFO 2022-05-30 10:54:37 Application shutdown complete.
+INFO 2022-05-30 10:54:37 Finished server process [7768]
+INFO 2022-05-30 10:54:38 Started server process [7979]
+INFO 2022-05-30 10:54:38 Waiting for application startup.
+INFO 2022-05-30 10:54:38 Application startup complete.
+ERROR 2022-05-30 10:54:43 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 24, in getUser
+    return respSuccessJson(curd_user.get(db, user_id))
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 26, in get
+    return dict(row) if to_dict else row
+TypeError: 'NoneType' object is not iterable
+WARNING 2022-05-30 10:55:32 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 10:55:32 Shutting down
+INFO 2022-05-30 10:55:32 Waiting for application shutdown.
+INFO 2022-05-30 10:55:32 Application shutdown complete.
+INFO 2022-05-30 10:55:32 Finished server process [7979]
+INFO 2022-05-30 10:55:33 Started server process [8014]
+INFO 2022-05-30 10:55:33 Waiting for application startup.
+INFO 2022-05-30 10:55:33 Application startup complete.
+WARNING 2022-05-30 11:04:34 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:04:34 Shutting down
+INFO 2022-05-30 11:04:34 Waiting for application shutdown.
+INFO 2022-05-30 11:04:34 Application shutdown complete.
+INFO 2022-05-30 11:04:34 Finished server process [8014]
+INFO 2022-05-30 11:04:35 Started server process [8269]
+INFO 2022-05-30 11:04:35 Waiting for application startup.
+INFO 2022-05-30 11:04:35 Application startup complete.
+WARNING 2022-05-30 11:09:15 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:09:15 Shutting down
+INFO 2022-05-30 11:09:15 Waiting for application shutdown.
+INFO 2022-05-30 11:09:15 Application shutdown complete.
+INFO 2022-05-30 11:09:15 Finished server process [8269]
+INFO 2022-05-30 11:09:16 Started server process [8360]
+INFO 2022-05-30 11:09:16 Waiting for application startup.
+INFO 2022-05-30 11:09:16 Application startup complete.
+WARNING 2022-05-30 11:10:26 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:10:26 Shutting down
+INFO 2022-05-30 11:10:26 Waiting for application shutdown.
+INFO 2022-05-30 11:10:26 Application shutdown complete.
+INFO 2022-05-30 11:10:26 Finished server process [8360]
+INFO 2022-05-30 11:10:27 Started server process [8388]
+INFO 2022-05-30 11:10:27 Waiting for application startup.
+INFO 2022-05-30 11:10:27 Application startup complete.
+WARNING 2022-05-30 11:16:45 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 11:16:45 Shutting down
+INFO 2022-05-30 11:16:46 Waiting for application shutdown.
+INFO 2022-05-30 11:16:46 Application shutdown complete.
+INFO 2022-05-30 11:16:46 Finished server process [8388]
+WARNING 2022-05-30 11:17:59 StatReload detected file change in 'apps/permission/curd/curd_user.py'. Reloading...
+WARNING 2022-05-30 11:18:56 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 11:18:56 Started server process [8577]
+INFO 2022-05-30 11:18:56 Waiting for application startup.
+INFO 2022-05-30 11:18:56 Application startup complete.
+WARNING 2022-05-30 11:19:46 StatReload detected file change in 'apps/permission/curd/curd_user.py'. Reloading...
+INFO 2022-05-30 11:19:46 Shutting down
+INFO 2022-05-30 11:19:46 Waiting for application shutdown.
+INFO 2022-05-30 11:19:46 Application shutdown complete.
+INFO 2022-05-30 11:19:46 Finished server process [8577]
+INFO 2022-05-30 11:19:48 Started server process [8610]
+INFO 2022-05-30 11:19:48 Waiting for application startup.
+INFO 2022-05-30 11:19:48 Application startup complete.
+WARNING 2022-05-30 11:24:10 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:24:10 Shutting down
+INFO 2022-05-30 11:24:10 Waiting for application shutdown.
+INFO 2022-05-30 11:24:10 Application shutdown complete.
+INFO 2022-05-30 11:24:10 Finished server process [8610]
+INFO 2022-05-30 11:24:11 Started server process [8740]
+INFO 2022-05-30 11:24:11 Waiting for application startup.
+INFO 2022-05-30 11:24:11 Application startup complete.
+WARNING 2022-05-30 11:25:24 StatReload detected file change in 'apps/permission/curd/curd_user.py'. Reloading...
+INFO 2022-05-30 11:25:24 Shutting down
+INFO 2022-05-30 11:25:24 Waiting for application shutdown.
+INFO 2022-05-30 11:25:24 Application shutdown complete.
+INFO 2022-05-30 11:25:24 Finished server process [8740]
+INFO 2022-05-30 11:25:25 Started server process [8773]
+INFO 2022-05-30 11:25:25 Waiting for application startup.
+INFO 2022-05-30 11:25:25 Application startup complete.
+WARNING 2022-05-30 11:28:00 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 11:28:00 Shutting down
+INFO 2022-05-30 11:28:00 Waiting for application shutdown.
+INFO 2022-05-30 11:28:00 Application shutdown complete.
+INFO 2022-05-30 11:28:00 Finished server process [8773]
+INFO 2022-05-30 11:28:01 Started server process [8820]
+INFO 2022-05-30 11:28:01 Waiting for application startup.
+INFO 2022-05-30 11:28:01 Application startup complete.
+WARNING 2022-05-30 11:29:49 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:29:49 Shutting down
+INFO 2022-05-30 11:29:49 Waiting for application shutdown.
+INFO 2022-05-30 11:29:49 Application shutdown complete.
+INFO 2022-05-30 11:29:49 Finished server process [8820]
+INFO 2022-05-30 11:29:50 Started server process [8879]
+INFO 2022-05-30 11:29:50 Waiting for application startup.
+INFO 2022-05-30 11:29:50 Application startup complete.
+WARNING 2022-05-30 11:37:05 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:37:05 Shutting down
+INFO 2022-05-30 11:37:05 Waiting for application shutdown.
+INFO 2022-05-30 11:37:05 Application shutdown complete.
+INFO 2022-05-30 11:37:05 Finished server process [8879]
+INFO 2022-05-30 11:37:06 Started server process [9290]
+INFO 2022-05-30 11:37:06 Waiting for application startup.
+INFO 2022-05-30 11:37:06 Application startup complete.
+ERROR 2022-05-30 11:37:18 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 31, in listUser
+    user_data, total, _, _ = curd_user.get_multi(db)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 54, in get_multi
+    obj = db.query(*self.query_columns).filter(*filters).offset(temp_page).limit(page_size)
+TypeError: sqlalchemy.orm.query.Query.filter() argument after * must be an iterable, not NoneType
+WARNING 2022-05-30 11:37:56 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:37:56 Shutting down
+INFO 2022-05-30 11:37:56 Waiting for application shutdown.
+INFO 2022-05-30 11:37:56 Application shutdown complete.
+INFO 2022-05-30 11:37:56 Finished server process [9290]
+INFO 2022-05-30 11:37:57 Started server process [9320]
+INFO 2022-05-30 11:37:57 Waiting for application startup.
+INFO 2022-05-30 11:37:57 Application startup complete.
+ERROR 2022-05-30 11:38:12 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 31, in listUser
+    user_data, total, _, _ = curd_user.get_multi(db)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 58, in get_multi
+    return obj.all(), total, temp_page, page_size
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2768, in all
+    return self._iter().all()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2903, in _iter
+    result = self.session.execute(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1696, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1631, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1498, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1862, in _execute_context
+    self._handle_dbapi_exception(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2043, in _handle_dbapi_exception
+    util.raise_(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-25, 25' at line 4")
+[SQL: SELECT users.avatar AS users_avatar, users.creator_id AS users_creator_id, users.email AS users_email, users.id AS users_id, users.is_active AS users_is_active, users.is_superuser AS users_is_superuser, users.nickname AS users_nickname, users.phone AS users_phone, users.sex AS users_sex, users.status AS users_status, users.username AS users_username, unix_timestamp(users.create_time) AS create_ts, unix_timestamp(users.update_time) AS update_ts 
+FROM users 
+WHERE users.is_delete = %(is_delete_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'is_delete_1': 0, 'param_1': -25, 'param_2': 25}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+WARNING 2022-05-30 11:38:46 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:38:46 Shutting down
+INFO 2022-05-30 11:38:47 Waiting for application shutdown.
+INFO 2022-05-30 11:38:47 Application shutdown complete.
+INFO 2022-05-30 11:38:47 Finished server process [9320]
+INFO 2022-05-30 11:38:47 Started server process [9342]
+INFO 2022-05-30 11:38:47 Waiting for application startup.
+INFO 2022-05-30 11:38:47 Application startup complete.
+ERROR 2022-05-30 11:38:50 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 32, in listUser
+    return respSuccessJson({'results': user_data, 'total': total})
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/resp.py", line 17, in respSuccessJson
+    return JSONResponse(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/responses.py", line 49, in __init__
+    self.body = self.render(content)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/responses.py", line 178, in render
+    return json.dumps(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Row is not JSON serializable
+WARNING 2022-05-30 11:43:30 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:43:30 Shutting down
+INFO 2022-05-30 11:43:30 Waiting for application shutdown.
+INFO 2022-05-30 11:43:30 Application shutdown complete.
+INFO 2022-05-30 11:43:30 Finished server process [9342]
+INFO 2022-05-30 11:43:31 Started server process [9491]
+INFO 2022-05-30 11:43:31 Waiting for application startup.
+INFO 2022-05-30 11:43:31 Application startup complete.
+ERROR 2022-05-30 11:43:39 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 31, in listUser
+    user_data, total, _, _ = curd_user.get_multi(db)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 53, in get_multi
+    total = db.query(func.count(self.model.id)).filter(*filters).scalar()
+TypeError: sqlalchemy.orm.query.Query.filter() argument after * must be an iterable, not NoneType
+WARNING 2022-05-30 11:43:55 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:43:55 Shutting down
+INFO 2022-05-30 11:43:56 Waiting for application shutdown.
+INFO 2022-05-30 11:43:56 Application shutdown complete.
+INFO 2022-05-30 11:43:56 Finished server process [9491]
+INFO 2022-05-30 11:43:56 Started server process [9511]
+INFO 2022-05-30 11:43:56 Waiting for application startup.
+INFO 2022-05-30 11:43:56 Application startup complete.
+WARNING 2022-05-30 11:45:32 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 11:45:32 Shutting down
+INFO 2022-05-30 11:45:32 Waiting for application shutdown.
+INFO 2022-05-30 11:45:32 Application shutdown complete.
+INFO 2022-05-30 11:45:32 Finished server process [9511]
+INFO 2022-05-30 11:45:33 Started server process [9548]
+INFO 2022-05-30 11:45:33 Waiting for application startup.
+INFO 2022-05-30 11:45:33 Application startup complete.
+WARNING 2022-05-30 11:52:54 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 11:52:54 Shutting down
+INFO 2022-05-30 11:52:55 Waiting for application shutdown.
+INFO 2022-05-30 11:52:55 Application shutdown complete.
+INFO 2022-05-30 11:52:55 Finished server process [9548]
+INFO 2022-05-30 11:52:55 Started server process [9775]
+INFO 2022-05-30 11:52:55 Waiting for application startup.
+INFO 2022-05-30 11:52:55 Application startup complete.
+WARNING 2022-05-30 11:59:39 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 11:59:39 Shutting down
+INFO 2022-05-30 11:59:40 Waiting for application shutdown.
+INFO 2022-05-30 11:59:40 Application shutdown complete.
+INFO 2022-05-30 11:59:40 Finished server process [9775]
+INFO 2022-05-30 11:59:41 Started server process [9982]
+INFO 2022-05-30 11:59:41 Waiting for application startup.
+INFO 2022-05-30 11:59:41 Application startup complete.
+WARNING 2022-05-30 12:02:46 StatReload detected file change in 'apps/permission/curd/curd_user.py'. Reloading...
+INFO 2022-05-30 12:02:46 Shutting down
+INFO 2022-05-30 12:02:47 Waiting for application shutdown.
+INFO 2022-05-30 12:02:47 Application shutdown complete.
+INFO 2022-05-30 12:02:47 Finished server process [9982]
+INFO 2022-05-30 12:02:47 Started server process [10171]
+INFO 2022-05-30 12:02:47 Waiting for application startup.
+INFO 2022-05-30 12:02:47 Application startup complete.
+WARNING 2022-05-30 12:03:12 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 12:03:12 Shutting down
+INFO 2022-05-30 12:03:13 Waiting for application shutdown.
+INFO 2022-05-30 12:03:13 Application shutdown complete.
+INFO 2022-05-30 12:03:13 Finished server process [10171]
+INFO 2022-05-30 12:03:13 Started server process [10200]
+INFO 2022-05-30 12:03:13 Waiting for application startup.
+INFO 2022-05-30 12:03:13 Application startup complete.
+ERROR 2022-05-30 12:03:24 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 32, in listUser
+    return respSuccessJson(curd_user.search(db, obj))
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 22, in search
+    if obj.status is not None:
+AttributeError: type object 'UserSearch' has no attribute 'status'
+WARNING 2022-05-30 12:05:14 StatReload detected file change in 'apps/permission/curd/curd_user.py'. Reloading...
+INFO 2022-05-30 12:05:14 Shutting down
+INFO 2022-05-30 12:05:14 Waiting for application shutdown.
+INFO 2022-05-30 12:05:14 Application shutdown complete.
+INFO 2022-05-30 12:05:14 Finished server process [10200]
+INFO 2022-05-30 12:05:15 Started server process [10259]
+INFO 2022-05-30 12:05:15 Waiting for application startup.
+INFO 2022-05-30 12:05:15 Application startup complete.
+ERROR 2022-05-30 12:05:19 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 32, in listUser
+    return respSuccessJson(curd_user.search(db, obj))
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 23, in search
+    filters.append(self.model.status == obj.status)
+AttributeError: type object 'UserSearch' has no attribute 'status'
+WARNING 2022-05-30 12:05:39 StatReload detected file change in 'apps/permission/curd/curd_user.py'. Reloading...
+INFO 2022-05-30 12:05:39 Shutting down
+INFO 2022-05-30 12:05:39 Waiting for application shutdown.
+INFO 2022-05-30 12:05:39 Application shutdown complete.
+INFO 2022-05-30 12:05:39 Finished server process [10259]
+INFO 2022-05-30 12:05:40 Started server process [10268]
+INFO 2022-05-30 12:05:40 Waiting for application startup.
+INFO 2022-05-30 12:05:40 Application startup complete.
+ERROR 2022-05-30 12:05:42 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 32, in listUser
+    return respSuccessJson(curd_user.search(db, obj))
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 22, in search
+    if hasattr(obj, 'status') or obj.status is not None:
+AttributeError: type object 'UserSearch' has no attribute 'status'
+WARNING 2022-05-30 12:06:04 StatReload detected file change in 'apps/permission/curd/curd_user.py'. Reloading...
+INFO 2022-05-30 12:06:04 Shutting down
+INFO 2022-05-30 12:06:05 Waiting for application shutdown.
+INFO 2022-05-30 12:06:05 Application shutdown complete.
+INFO 2022-05-30 12:06:05 Finished server process [10268]
+INFO 2022-05-30 12:06:05 Started server process [10289]
+INFO 2022-05-30 12:06:05 Waiting for application startup.
+INFO 2022-05-30 12:06:05 Application startup complete.
+ERROR 2022-05-30 12:06:08 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 32, in listUser
+    return respSuccessJson(curd_user.search(db, obj))
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 24, in search
+    if obj.username:
+AttributeError: type object 'UserSearch' has no attribute 'username'
+WARNING 2022-05-30 12:55:54 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 12:55:54 Shutting down
+INFO 2022-05-30 12:55:54 Waiting for application shutdown.
+INFO 2022-05-30 12:55:54 Application shutdown complete.
+INFO 2022-05-30 12:55:54 Finished server process [10289]
+INFO 2022-05-30 12:55:55 Started server process [10947]
+INFO 2022-05-30 12:55:55 Waiting for application startup.
+INFO 2022-05-30 12:55:55 Application startup complete.
+WARNING 2022-05-30 12:56:11 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 12:56:11 Shutting down
+INFO 2022-05-30 12:56:11 Waiting for application shutdown.
+INFO 2022-05-30 12:56:11 Application shutdown complete.
+INFO 2022-05-30 12:56:11 Finished server process [10947]
+INFO 2022-05-30 12:56:12 Started server process [10975]
+INFO 2022-05-30 12:56:12 Waiting for application startup.
+INFO 2022-05-30 12:56:12 Application startup complete.
+WARNING 2022-05-30 13:02:59 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 13:02:59 Shutting down
+INFO 2022-05-30 13:02:59 Waiting for application shutdown.
+INFO 2022-05-30 13:02:59 Application shutdown complete.
+INFO 2022-05-30 13:02:59 Finished server process [10975]
+INFO 2022-05-30 13:03:00 Started server process [11211]
+INFO 2022-05-30 13:03:00 Waiting for application startup.
+INFO 2022-05-30 13:03:00 Application startup complete.
+WARNING 2022-05-30 13:04:16 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 13:04:16 Shutting down
+INFO 2022-05-30 13:04:17 Waiting for application shutdown.
+INFO 2022-05-30 13:04:17 Application shutdown complete.
+INFO 2022-05-30 13:04:17 Finished server process [11211]
+INFO 2022-05-30 13:04:17 Started server process [11271]
+INFO 2022-05-30 13:04:17 Waiting for application startup.
+INFO 2022-05-30 13:04:17 Application startup complete.
+WARNING 2022-05-30 13:05:30 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 13:05:30 Shutting down
+INFO 2022-05-30 13:05:30 Waiting for application shutdown.
+INFO 2022-05-30 13:05:30 Application shutdown complete.
+INFO 2022-05-30 13:05:30 Finished server process [11271]
+INFO 2022-05-30 13:05:31 Started server process [11296]
+INFO 2022-05-30 13:05:31 Waiting for application startup.
+INFO 2022-05-30 13:05:31 Application startup complete.
+WARNING 2022-05-30 13:06:46 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 13:06:46 Shutting down
+INFO 2022-05-30 13:06:46 Waiting for application shutdown.
+INFO 2022-05-30 13:06:46 Application shutdown complete.
+INFO 2022-05-30 13:06:46 Finished server process [11296]
+INFO 2022-05-30 13:06:47 Started server process [11334]
+INFO 2022-05-30 13:06:47 Waiting for application startup.
+INFO 2022-05-30 13:06:47 Application startup complete.
+WARNING 2022-05-30 13:11:42 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 13:11:42 Shutting down
+INFO 2022-05-30 13:11:42 Waiting for application shutdown.
+INFO 2022-05-30 13:11:42 Application shutdown complete.
+INFO 2022-05-30 13:11:42 Finished server process [11334]
+INFO 2022-05-30 13:11:43 Started server process [11545]
+INFO 2022-05-30 13:11:43 Waiting for application startup.
+INFO 2022-05-30 13:11:43 Application startup complete.
+ERROR 2022-05-30 13:12:06 Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 96, in __call__
+    raise exc from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/uvicorn/middleware/debug.py", line 93, in __call__
+    await self.app(scope, receive, inner_send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/applications.py", line 261, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/applications.py", line 119, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 87, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/exceptions.py", line 76, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 659, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/starlette/concurrency.py", line 45, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/views.py", line 38, in listUser
+    return respSuccessJson(curd_user.search(db, ))
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/apps/permission/curd/curd_user.py", line 31, in search
+    user_data, total, _, _ = curd_user.get_multi(db, page=page, page_size=page_size, filters=filters)
+  File "/Users/beginner/Projects/temp/fastapi-vue/backend/app/common/curd_base.py", line 60, in get_multi
+    return [dict(i) for i in obj.all()] if to_dict else obj.all(), total, temp_page, page_size
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2768, in all
+    return self._iter().all()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2903, in _iter
+    result = self.session.execute(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1696, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1631, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1498, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1862, in _execute_context
+    self._handle_dbapi_exception(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2043, in _handle_dbapi_exception
+    util.raise_(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1, 25' at line 4")
+[SQL: SELECT users.avatar AS users_avatar, users.creator_id AS users_creator_id, users.email AS users_email, users.id AS users_id, users.is_active AS users_is_active, users.is_superuser AS users_is_superuser, users.nickname AS users_nickname, users.phone AS users_phone, users.sex AS users_sex, users.status AS users_status, users.username AS users_username, unix_timestamp(users.create_time) AS create_ts, unix_timestamp(users.update_time) AS update_ts 
+FROM users 
+WHERE users.is_delete = %(is_delete_1)s 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'is_delete_1': 0, 'param_1': -1, 'param_2': 25}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+WARNING 2022-05-30 13:14:05 StatReload detected file change in 'common/curd_base.py'. Reloading...
+INFO 2022-05-30 13:14:06 Shutting down
+INFO 2022-05-30 13:14:06 Waiting for application shutdown.
+INFO 2022-05-30 13:14:06 Application shutdown complete.
+INFO 2022-05-30 13:14:06 Finished server process [11545]
+INFO 2022-05-30 13:14:06 Started server process [11601]
+INFO 2022-05-30 13:14:06 Waiting for application startup.
+INFO 2022-05-30 13:14:06 Application startup complete.
+WARNING 2022-05-30 13:39:08 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 13:39:08 Shutting down
+INFO 2022-05-30 13:39:08 Waiting for application shutdown.
+INFO 2022-05-30 13:39:08 Application shutdown complete.
+INFO 2022-05-30 13:39:08 Finished server process [11601]
+INFO 2022-05-30 13:39:09 Started server process [12118]
+INFO 2022-05-30 13:39:09 Waiting for application startup.
+INFO 2022-05-30 13:39:09 Application startup complete.
+WARNING 2022-05-30 14:09:59 StatReload detected file change in 'apps/permission/views.py'. Reloading...
+INFO 2022-05-30 14:09:59 Shutting down
+INFO 2022-05-30 14:09:59 Waiting for application shutdown.
+INFO 2022-05-30 14:09:59 Application shutdown complete.
+INFO 2022-05-30 14:09:59 Finished server process [12118]
+WARNING 2022-05-30 14:13:58 StatReload detected file change in 'apps/permission/curd/curd_user.py'. Reloading...
+INFO 2022-05-30 14:13:59 Started server process [12872]
+INFO 2022-05-30 14:13:59 Waiting for application startup.
+INFO 2022-05-30 14:13:59 Application startup complete.
+INFO 2022-05-30 19:36:14 Shutting down
+INFO 2022-05-30 19:36:14 Waiting for application shutdown.
+INFO 2022-05-30 19:36:14 Application shutdown complete.
+INFO 2022-05-30 19:36:14 Finished server process [12872]
+INFO 2022-05-30 19:36:14 Stopping reloader process [7101]
