@@ -274,7 +274,7 @@ async def getUserRouters(*,
                          db: Session = Depends(deps.get_db),
                          u: Users = Depends(deps.get_current_user)
                          ):
-    menus = curd_user.getMenus(db, _id=u['id'])
+    menus = curd_user.getMenus(db, _id=None if u['is_superuser'] else u['id'])
     return respSuccessJson({'menus': menus})
 
 
@@ -283,7 +283,7 @@ async def getUserRouters(*,
                          db: Session = Depends(deps.get_db),
                          u: Users = Depends(deps.get_current_user)
                          ):
-    menus = curd_user.getMenusTree(db, _id=u['id'])
+    menus = curd_user.getMenusTree(db, _id=None if u['is_superuser'] else u['id'])
     return respSuccessJson({'menus': menus})
 
 

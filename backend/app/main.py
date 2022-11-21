@@ -44,7 +44,6 @@ if __name__ == '__main__':
         app='main:app',
         host=str(settings.HOST),
         port=settings.PORT,
-        debug=settings.DEBUG,
         reload=settings.RELOAD,
         log_config=str(settings.LOGGING_CONFIG_FILE)
     )

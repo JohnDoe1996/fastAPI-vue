@@ -9,27 +9,32 @@
     </el-row>
 
     <el-row :gutter="32">
-      <el-col :xs="24" :sm="24" :lg="6">
+      <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
           <raddar-chart />
         </div>
       </el-col>
-      <el-col :xs="24" :sm="24" :lg="6">
+      <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
           <pie-chart />
         </div>
       </el-col>
-      <el-col :xs="24" :sm="24" :lg="6">
+      <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
           <bar-chart />
         </div>
       </el-col>
-      <el-col :xs="24" :sm="24" :lg="6">
-        <div class="chart-wrapper">
-          <div style="height: 300px;">
-
-          </div>
-        </div>
+    </el-row>
+    <div style="text-align: center; margin-bottom: 5px; font-weight: bolder; font-size: 30px">支持&反馈</div>
+    <el-row :gutter="32">
+      <el-col :span="8">
+        <el-image :src="publicPath + 'alipay.jpg'" style="width: 100%"></el-image>
+      </el-col>
+      <el-col :span="8">
+        <el-image :src="publicPath + 'wechatpay.jpg'" style="width: 100%"></el-image>
+      </el-col>
+      <el-col :span="8">
+        <el-image :src="publicPath + 'qqqun.jpg'" style="width: 100%"></el-image>
       </el-col>
     </el-row>
   </div>
@@ -78,6 +83,7 @@ export default {
   },
   data() {
     return {
+       publicPath: process.env.BASE_URL,
       lineChartData: lineChartData.newVisitis
     }
   },

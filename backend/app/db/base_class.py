@@ -26,11 +26,19 @@ class Base:
         return (settings.SQL_TABLE_PREFIX or "") + camel_case_2_underscore(cls.__name__)
 
     @staticmethod
-    def dt2ts(column, label: str):
+    def dt2ts(column: Column, label: str):
+        """
+        使用原生SQL把数据库时间转换为时间戳(使用时间戳解决时区问题)
+        :param column:  type: Column    需要转换的数据库日期字段
+        :param label:   type: string    转后时间戳的的字段名(相当于 sql 中的 AS )
+        """
         return func.unix_timestamp(column).label(label)
 
     @classmethod
     def listColumns(cls):
+        """
+        列出所有字段
+        """
         return [getattr(cls, i) for i in dir(cls) if isinstance(getattr(cls, i), InstrumentedAttribute) 
                 and isinstance(getattr(cls, i).comparator, properties.ColumnProperty.Comparator)]
 

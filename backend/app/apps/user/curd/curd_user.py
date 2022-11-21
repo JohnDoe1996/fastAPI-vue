@@ -1,4 +1,3 @@
-from tkinter import Menu
 from sqlalchemy import distinct, desc, asc, func
 from sqlalchemy.orm import Session
 from apps.permission.models.menu import Menus
@@ -80,19 +79,21 @@ class CURDUser(CRUDBase):
     def getRoles(self, db: Session, _id: int):
         return db.query(Users).filter(Users.id == _id).first().user_role
 
-    def getMenus(self, db: Session, _id: int):
+    def getMenus(self, db: Session, _id: int = None):
         menu_id_in = [menu['id'] for menu in db
             .query(distinct(RoleMenu.menu_id).label('id'))
             .join(Roles, Roles.id == RoleMenu.role_id)
             .join(UserRole, Roles.id == UserRole.role_id)
             .filter(UserRole.user_id == _id, Roles.is_deleted == 0, RoleMenu.is_deleted == 0)
-            .all()]
-        res = db.query(
+            .all()] if _id is not None else None
+        q = db.query(
             Menus.id, Menus.path, Menus.name, Menus.icon, Menus.parent_id, Menus.is_frame, Menus.title,
             Menus.no_cache, Menus.component, Menus.hidden
-        ).filter(
-            Menus.is_deleted == 0, Menus.id.in_(menu_id_in), Menus.status == 0
-        ).order_by(asc(Menus.order_num)).all()
+        ).filter(Menus.is_deleted == 0,  Menus.status == 0)
+        if menu_id_in:
+            q = q.filter(Menus.id.in_(menu_id_in))
+
+        res = q.order_by(asc(Menus.order_num)).all()
         return [{
             'id': i['id'],
             'parent_id': i['parent_id'],
@@ -108,20 +109,24 @@ class CURDUser(CRUDBase):
             }
         } for i in res]
 
-    def getMenusTree(self, db: Session, _id: int):
+    def getMenusTree(self, db: Session, _id: int = None):
         menu_id_in = [menu['id'] for menu in db
             .query(distinct(RoleMenu.menu_id).label('id'))
             .join(Roles, Roles.id == RoleMenu.role_id)
             .join(UserRole, Roles.id == UserRole.role_id)
             .filter(UserRole.user_id == _id, Roles.is_deleted == 0, RoleMenu.is_deleted == 0)
-            .all()]
+            .all()] if _id is not None else None
+
         def __get_children_menus(menu_id: int = 0):
-            children = db.query(
+            q = db.query(
                 Menus.id, Menus.path, Menus.name, Menus.icon, Menus.parent_id, Menus.is_frame, Menus.title,
                 Menus.no_cache, Menus.component, Menus.hidden
             ).filter(
                 Menus.is_deleted == 0, Menus.parent_id == menu_id, Menus.id.in_(menu_id_in), Menus.status == 0
-            ).order_by(asc(Menus.order_num)).all()
+            )
+            if menu_id_in:
+                q = q.filter(Menus.id.in_(menu_id_in))
+            children = q.order_by(asc(Menus.order_num)).all()
             result = []
             for child in children:
                 result.append({

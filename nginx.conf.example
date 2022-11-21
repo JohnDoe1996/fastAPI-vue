@@ -1,0 +1,34 @@
+upstream fastapi-backend {
+    server 127.0.0.1:8100 weight=20 max_fails=200 fail_timeout=20s;
+    server 127.0.0.1:8101 weight=20 max_fails=200 fail_timeout=20s;
+}
+
+server {
+    listen 80;
+    server_name localhost;
+    client_max_body_size 5m;
+    error_log /home/ubuntu/log/nginx/fastapi-backend.error.log;
+    access_log /home/ubuntu/log/nginx/fastapi-backend.access.log;
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-User-Agent $http_user_agent;
+        proxy_pass http://fastapi-backend;
+    }
+}
+
+server {
+    listen 80;
+    server_name localhost;
+    client_max_body_size 5m;
+    error_log /home/ubuntu/log/nginx/fastapi-frontend.error.log;
+    access_log /home/ubuntu/log/nginx/fastapi-frontend.access.log;
+
+    location / {
+        root   /home/ubuntu/opt/fastAPI-vue/frontend/dist;
+        try_files $uri $uri/ /index.html;
+        index  index.html index.htm;
+    }
+}
