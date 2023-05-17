@@ -47,3 +47,17 @@ if __name__ == '__main__':
         reload=settings.RELOAD,
         log_config=str(settings.LOGGING_CONFIG_FILE)
     )
+    
+    
+"""
+Celery schedule worker
+
+1) start worker in project base path
+    
+    celery -A workers  worker -l info
+    
+2) start beat in project base path
+
+    celery -A workers beat -l info
+    
+"""

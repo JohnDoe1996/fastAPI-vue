@@ -1,12 +1,13 @@
 import aioredis
 from fastapi import FastAPI
+import redis
 
 from core.config import settings
 
 
 def registerRedis(app: FastAPI) -> None:
     """
-    把redis挂载到app对象上面
+    把redis挂载到app对象上面, 异步redis
     :param app:
     :return:
     """
@@ -26,3 +27,13 @@ def registerRedis(app: FastAPI) -> None:
         :return:
         """
         await app.state.redis.close()
+
+
+def get_redis() -> redis.Redis:
+    """
+    get_redis 同步的redis
+
+    :return redis.Redis
+    """
+    pool = redis.ConnectionPool.from_url(settings.getRedisURL())
+    return redis.Redis(connection_pool=pool)

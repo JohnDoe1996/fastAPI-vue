@@ -1,3 +1,4 @@
+from datetime import timedelta
 import os
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..'))
@@ -13,6 +14,9 @@ FORGET_PWD_TOKEN_EXPIRE_HOURS = 24
 USER_FORGET_PWD_SUBMIT_NUM_LIMIT = 2
 USER_FORGET_PWD_SUBMIT_EXPIRE_MINUTES = 5
 USER_PERM_LABEL_CACHE_EXPIRE_MINUTES = 3
+
+CELERY_PRINT_DATETIME = timedelta(seconds=10)
+
 
 REDIS_KEY_LOGIN_TOKEN_KEY_PREFIX = "user_login_token_"
 REDIS_KEY_REGISTER_TOKEN_KEY_PREFIX = "user_register_token_"

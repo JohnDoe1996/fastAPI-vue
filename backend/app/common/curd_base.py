@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Any, Dict, Generic, List, Optional, Type, TypeVar, Union, Tuple
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
@@ -9,6 +10,19 @@ from copy import deepcopy
 ModelType = TypeVar("ModelType", bound=Base)
 CreateSchemaType = TypeVar("CreateSchemaType", bound=BaseModel)
 UpdateSchemaType = TypeVar("UpdateSchemaType", bound=BaseModel)
+
+
+# START
+""" 
+    jsonable_encoder (类转字典) 的 custom_encoder 方法。有些数据类型通过jsonable_encoder后会转换成不符合需求的类型或报错。 (目前遇到这3个 后续遇到其他再添加)
+eg: 
+    # 遇到dict类型数据使用custom_encoder_dict_fn解析,即直接输出字典类型不然会报错。 遇到datetime类型使用custom_encoder_datetime2str_fn解析成符合mysql的字符串,不然会转成其他格式的字符串
+    data = jsonable_encoder(obj_in, custom_encoder={dict: custom_encoder_dict_fn, datetime: custom_encoder_datetime2str_fn})   
+"""
+custom_encoder_dict_fn = lambda x : x
+custom_encoder_datetime_fn = lambda x : x
+custom_encoder_datetime2str_fn = lambda x : x.strftime("%Y-%m-%d %H:%M:%S")
+# END
 
 
 class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
@@ -66,7 +80,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
 
     def create(self, db: Session, *, obj_in: Union[CreateSchemaType, Dict[str, Any]], creator_id: int = 0) -> ModelType:
         """ 创建 """
-        obj_in_data = obj_in if isinstance(obj_in, dict) else jsonable_encoder(obj_in)
+        obj_in_data = jsonable_encoder(obj_in, custom_encoder={dict: custom_encoder_dict_fn})
         obj_in_data['creator_id'] = creator_id
         db_obj = self.model(**obj_in_data)  # type: ignore
         db.add(db_obj)
@@ -77,7 +91,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
     def update(self, db: Session, *, _id: int, obj_in: Union[UpdateSchemaType, Dict[str, Any]],
                modifier_id: int = 0) -> ModelType:
         """ 更新 """
-        update_data = obj_in if isinstance(obj_in, dict) else jsonable_encoder(obj_in)
+        update_data = jsonable_encoder(obj_in, custom_encoder={dict: custom_encoder_dict_fn})
         update_data['modifier_id'] = modifier_id
         update_data = {getattr(self.model, k): v for k, v in update_data.items() if hasattr(self.model, k)}
         obj = db.query(self.model).filter(self.model.id ==_id, self.model.is_deleted != 1).update(update_data)

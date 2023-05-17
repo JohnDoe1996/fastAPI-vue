@@ -15,7 +15,7 @@ class Base:
     created_time = Column(DateTime, default=datetime.now, server_default=func.now(), comment="创建时间")
     creator_id = Column(Integer, default=0, server_default='0', comment="创建人id")
     modified_time = Column(DateTime, default=datetime.now, onupdate=datetime.now, server_default=func.now(),
-                         server_onupdate=func.now(), comment="更新时间")
+                           server_onupdate=func.now(), comment="更新时间")
     modifier_id = Column(Integer, default=0, server_default='0', comment="修改人id")
     is_deleted = Column(Integer, default=0, comment="逻辑删除:0=未删除,1=删除", server_default='0')
 
@@ -32,7 +32,9 @@ class Base:
         :param column:  type: Column    需要转换的数据库日期字段
         :param label:   type: string    转后时间戳的的字段名(相当于 sql 中的 AS )
         """
-        return func.unix_timestamp(column).label(label)
+        # return func.strftime('%%s', column).label(label)  # sqlite
+        # return func.date_part('EPOCH', column).label(label) # psql
+        return func.unix_timestamp(column).label(label)  # mysql
 
     @classmethod
     def listColumns(cls):

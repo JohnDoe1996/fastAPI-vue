@@ -34,7 +34,7 @@ def get_db() -> Generator:
 
 def get_db_connect() -> Generator:
     """
-    get SQLAlchemy connect to exec sql
+    get SQLAlchemy connect
     :return: SQLAlchemy connect
     """
     conn = None
