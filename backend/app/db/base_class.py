@@ -33,7 +33,7 @@ class Base:
         :param label:   type: string    转后时间戳的的字段名(相当于 sql 中的 AS )
         """
         # return func.strftime('%%s', column).label(label)  # sqlite
-        # return func.date_part('EPOCH', column).label(label) # psql
+        # cast(func.date_part('EPOCH', column), Integer).label(label) # psql
         return func.unix_timestamp(column).label(label)  # mysql
 
     @classmethod

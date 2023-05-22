@@ -128,7 +128,7 @@ export default {
       const password = Cookies.get("password");
       const rememberMe = Cookies.get("rememberMe");
       this.loginForm = {
-        username: username === undefined ? this.loginForm.username : username,
+        username: username === undefined ? this.loginForm.user : username,
         password: password === undefined ? this.loginForm.password : decrypt(password),
         rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
       };
@@ -138,7 +138,7 @@ export default {
         if (valid) {
           this.loading = true
            if (this.rememberMe) {
-            Cookies.set("username", this.loginForm.username, { expires: 30 });
+            Cookies.set("username", this.loginForm.user, { expires: 30 });
             Cookies.set("password", encrypt(this.loginForm.password), { expires: 30 });
             Cookies.set("rememberMe", this.rememberMe, { expires: 30 });
           } else {

@@ -2,6 +2,8 @@
 
 ## 简介
 
+> 在gitee平台好像看不到图片，可以去[CSDN(https://blog.csdn.net/sinat_34149445/article/details/127975155)](https://blog.csdn.net/sinat_34149445/article/details/127975155)查看图片 
+
 [**GITHUB**:  https://github.com/JohnDoe1996/fastAPI-vue.git](https://github.com/JohnDoe1996/fastAPI-vue.git)
 
 [**GITEE**:  https://gitee.com/zy1234500/fastAPI-vue](https://gitee.com/zy1234500/fastAPI-vue)
@@ -12,6 +14,8 @@ fastAPI的性能在Python中还算挺不错的，使用起来也很方便。gith
 大部分功能和若依相似，但是在原基础上删除了我个人认为用得很少的 部门 模块。并在原基础上加上了用户注册功能。
 
 ### 运行截图
+
+
 ![登录页面](https://img-blog.csdnimg.cn/7547dcfaaf494d0e8136bf7bc4a6c717.png)
 
 ![仪表盘页面](https://img-blog.csdnimg.cn/f4d74fc8b3eb4c1a92e84d933f4f701a.png)
@@ -34,6 +38,22 @@ fastAPI的性能在Python中还算挺不错的，使用起来也很方便。gith
 | 运维员 | opt |  opt123 |
 | 普通用户 | user | 123456 |
 
+
+## 更新日志  
+
+> 感谢各个平台中给我问题反馈和优化方案的朋友们。
+
+- 1.0.1 (20230514)
+1. 修复sql_init.sql执行报错(sql语句建表顺序问题)
+2. 修复requirements.txt中jinja拼写错误
+3. 修复get_uuid函数生成uuid不带- 
+4. 新增celery 异步处理函数的模板以及定时任务的支持
+5. 新增flask jsonable_encoder  custom_encoder函数(dict直出，datatime直出，datatime输出格式化字符串)
+6. 修复READMR.md中前端部署的错误部分
+7. 修复登录页面记住密码报错的bug
+
+- 1.0.0 (base)
+1. 初始上传项目
 
 ## 项目部署
 
@@ -112,18 +132,18 @@ npm i  # 安装包
 
 3. 开发环境配置
 ```shell
-cp .env.production.example .env.production  # 复制配置文件
+cp .env.development.example .env.development  # 复制配置文件
 
-vim .env.production  # 编辑配置文件
+vim .env.development  # 编辑配置文件
 
 npm run dev    # 测试运行程序 
 ```
 
 4. 生产环境配置
 ```shell
-cp .env.development.example .env.development  # 复制配置文件
+cp .env.production.example .env.production  # 复制配置文件
 
-vim .env.development  # 编辑配置文件
+vim .env.production  # 编辑配置文件
 
 npm run build:stage  # 打包项目文件 (可以考虑在本地打包后把dies文件上传服务器部署)
 ```

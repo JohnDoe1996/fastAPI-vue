@@ -3,12 +3,24 @@ import uuid
 import random
 
 
-def get_uuid() -> str:
+def get_uuid(res_type: str = 'str'):
     """
     生成uuid
-    :return:
+    :param res_type:      :type str   返回类型, 默认str 
     """
-    return uuid.uuid4().hex
+    res_type = res_type.lower()
+    obj = uuid.uuid4()
+    if res_type.startswith('obj'):
+        return obj
+    elif res_type.startswith('h'):
+        return obj.hex
+    elif res_type.startswith('int'):
+        return obj.int
+    elif res_type.startswith('field'):
+        return obj.fields
+    else:
+        return str(obj)
+
 
 
 def get_random_string(length: int, number: bool = True, uppercase: bool = True, lowercase: bool = True) -> str:

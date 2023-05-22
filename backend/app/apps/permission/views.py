@@ -1,15 +1,7 @@
 import os
-from distutils.log import debug
-from typing import Any, Optional
 
-from fastapi import APIRouter, Depends, Query
-from fastapi import File, UploadFile
-from prometheus_client import Summary
-from sqlalchemy.orm import Session, joinedload
-# excel
-from io import BytesIO
-from openpyxl import load_workbook
-
+from fastapi import APIRouter, Depends, Query, File, UploadFile
+from sqlalchemy.orm import Session
 from utils.encrypt import get_uuid
 from .models import Users
 from .schemas import *
