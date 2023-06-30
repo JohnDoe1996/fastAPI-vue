@@ -53,7 +53,7 @@ fastAPI的性能在Python中还算挺不错的，使用起来也很方便。gith
 7. 修复登录页面记住密码报错的bug
 8. 删除debug参数，高版本fastapi已废弃debug参数
 9. 修复modified_on, created_on的默认时间不是使用数据库的时间，datatime.now -> func.now()
-10. 
+
 
 - 1.0.0 (base)
 1. 初始上传项目
@@ -99,7 +99,7 @@ pip install -r requirements.txt   # 安装库  可使用谷内源：  -i https:/
 
 3. 准备程序配置文件 
 ```shell
-cp ./configs/.env.example  ./configs.env    # 复制配置模板
+cp ./configs/.env.example  ./configs/.env    # 复制配置模板
 
 vim ./configs/.env     # 拷贝配置文件
 
