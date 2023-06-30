@@ -12,9 +12,9 @@ from utils.transform import camel_case_2_underscore
 @as_declarative()
 class Base:
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    created_time = Column(DateTime, default=datetime.now, server_default=func.now(), comment="创建时间")
+    created_time = Column(DateTime, default=func.now(), server_default=func.now(), comment="创建时间")
     creator_id = Column(Integer, default=0, server_default='0', comment="创建人id")
-    modified_time = Column(DateTime, default=datetime.now, onupdate=datetime.now, server_default=func.now(),
+    modified_time = Column(DateTime, default=func.now(), onupdate=func.now(), server_default=func.now(),
                            server_onupdate=func.now(), comment="更新时间")
     modifier_id = Column(Integer, default=0, server_default='0', comment="修改人id")
     is_deleted = Column(Integer, default=0, comment="逻辑删除:0=未删除,1=删除", server_default='0')
@@ -26,15 +26,23 @@ class Base:
         return (settings.SQL_TABLE_PREFIX or "") + camel_case_2_underscore(cls.__name__)
 
     @staticmethod
-    def dt2ts(column: Column, label: str):
+    def dt2ts(column: Column, label: str = ""):
         """
         使用原生SQL把数据库时间转换为时间戳(使用时间戳解决时区问题)
         :param column:  type: Column    需要转换的数据库日期字段
         :param label:   type: string    转后时间戳的的字段名(相当于 sql 中的 AS )
         """
-        # return func.strftime('%%s', column).label(label)  # sqlite
-        # cast(func.date_part('EPOCH', column), Integer).label(label) # psql
-        return func.unix_timestamp(column).label(label)  # mysql
+        # ts = func.strftime('%%s', column)  # sqlite
+        # ts = cast(func.date_part('EPOCH', column), Integer) # pgsql
+        ts = func.unix_timestamp(column) # mysql
+        return ts.label(label) if label else ts
+
+    @staticmethod
+    def ts2dt(column: Column, label: str = ""):
+        # dt = func.datetime(column,'unixepoch')  # sqlite
+        # dt = func.to_timestamp(column)    # pgsql
+        dt = func.from_unixtime(column)  # mysql
+        return dt.label(label) if label else dt
 
     @classmethod
     def listColumns(cls):

@@ -54,7 +54,7 @@ Celery schedule worker
 
 1) start worker in project base path
     
-    celery -A workers  worker -l info
+    celery -A workers  worker -l info -c 1
     
 2) start beat in project base path
 

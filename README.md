@@ -51,6 +51,9 @@ fastAPI的性能在Python中还算挺不错的，使用起来也很方便。gith
 5. 新增flask jsonable_encoder  custom_encoder函数(dict直出，datatime直出，datatime输出格式化字符串)
 6. 修复READMR.md中前端部署的错误部分
 7. 修复登录页面记住密码报错的bug
+8. 删除debug参数，高版本fastapi已废弃debug参数
+9. 修复modified_on, created_on的默认时间不是使用数据库的时间，datatime.now -> func.now()
+10. 
 
 - 1.0.0 (base)
 1. 初始上传项目

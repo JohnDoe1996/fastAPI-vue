@@ -4,7 +4,8 @@ import argparse
 import click
 from typing import Any, Dict, List, Optional, Union
 from core import constants
-from pydantic import AnyHttpUrl, BaseSettings, EmailStr, HttpUrl, PostgresDsn, validator, IPvAnyAddress, BaseModel, FilePath
+from pydantic import AnyHttpUrl, BaseSettings, IPvAnyAddress, BaseModel, FilePath
+from pydantic.env_settings import env_file_sentinel
 
 
 class Settings(BaseSettings):
@@ -56,6 +57,10 @@ class Settings(BaseSettings):
         """
         pwd = f':{self.REDIS_PASSWORD}@' if self.REDIS_PASSWORD else ""
         return f"redis://{pwd}{self.REDIS_HOST}:{self.REDIS_PORT}/{self.REDIS_DB}?encoding=utf-8"
+        
+    # celery
+    CELERY_BROKER: str = 'redis://127.0.0.1:6379/2'
+    CELERY_BACKEND: str = 'redis://127.0.0.1:6379/3'
 
     # email 不填SMTP_HOST代表不使用邮箱服务， 填写后账号注册会有邮件确认
     SMTP_TLS: bool = False
@@ -67,4 +72,7 @@ class Settings(BaseSettings):
     EMAIL_TEMPLATES_DIR: str = "./email-templates/"  # 模板路径
 
 
-settings = Settings(_env_file=constants.DEFAULT_ENV_FILE, _env_file_encoding='utf-8')
+settings = Settings(
+    _env_file=constants.DEFAULT_ENV_FILE if os.path.exists(constants.DEFAULT_ENV_FILE) else env_file_sentinel, 
+    _env_file_encoding='utf-8'
+)
