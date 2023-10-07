@@ -43,6 +43,11 @@ fastAPI的性能在Python中还算挺不错的，使用起来也很方便。gith
 
 > 感谢各个平台中给我问题反馈和优化方案的朋友们。
 
+- 1.0.2 (20231001)
+1. 修复curd_base中物理删除_in参数ids错误
+2. logging配置文件由json格式修改为conf格式，并优化了logging的输出文件和对uvicorn&gunicorn的同时兼容(gunicorn不支持json格式的logger配置)
+3. 添加celery worker 的logging配置
+
 - 1.0.1 (20230514)
 1. 修复sql_init.sql执行报错(sql语句建表顺序问题)
 2. 修复requirements.txt中jinja拼写错误

@@ -1,5 +1,5 @@
 [program: fastapi-backend]
-command=/home/ubuntu/opt/fastAPI-vue/backend/app/venv/bin/python -m gunicorn main:app -w 2 -k uvicorn.workers.UvicornWorker -b 127.0.0.1:81%(process_num)02d
+command=/home/ubuntu/opt/fastAPI-vue/backend/app/venv/bin/python -m gunicorn main:app -w 2 -k uvicorn.workers.UvicornWorker -b 127.0.0.1:81%(process_num)02d  --log-config ./configs/logging_config.conf
 directory=/home/ubuntu/opt/fastAPI-vue/backend/app
 numprocs=2  
 process_name=81%(process_num)02d  

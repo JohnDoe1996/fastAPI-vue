@@ -118,7 +118,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         db.commit()
         return obj
 
-    def remove(self, db: Session, *,_id: int) -> ModelType:
+    def remove(self, db: Session, *, _id: int) -> ModelType:
         """ 物理删除 """
         obj = db.query(self.model).filter(self.model.id == _id)
         db.delete(obj)
@@ -127,7 +127,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
 
     def removes(self, db: Session, *, _ids: List[int]) -> ModelType:
         """ 物理删除 """
-        obj = db.query(self.model).filter(self.model.id.in_(id))
+        obj = db.query(self.model).filter(self.model.id.in_(_ids))
         db.delete(obj)
         db.commit()
         return obj
