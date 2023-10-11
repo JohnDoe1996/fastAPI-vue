@@ -2,7 +2,10 @@ import os
 from datetime import timedelta
 import json
 from typing import Any, Optional
-from aioredis import Redis
+try:
+    from redis.asyncio import Redis
+except ImportError:
+    from aioredis import Redis
 
 from fastapi import APIRouter, Depends, Header, Request, UploadFile, HTTPException
 from sqlalchemy.orm import Session

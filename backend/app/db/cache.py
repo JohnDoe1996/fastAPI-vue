@@ -1,4 +1,7 @@
-import aioredis
+try:
+    from redis import asyncio as aioredis
+except ImportError:
+    import aioredis
 from fastapi import FastAPI
 import redis
 

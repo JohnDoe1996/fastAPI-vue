@@ -47,6 +47,7 @@ fastAPI的性能在Python中还算挺不错的，使用起来也很方便。gith
 1. 修复curd_base中物理删除_in参数ids错误
 2. logging配置文件由json格式修改为conf格式，并优化了logging的输出文件和对uvicorn&gunicorn的同时兼容(gunicorn不支持json格式的logger配置)
 3. 添加celery worker 的logging配置
+4. 使用redis>=4.2.0的asyncio代替aioredis,解决python3.11+版本出现导入aioredis报错 
 
 - 1.0.1 (20230514)
 1. 修复sql_init.sql执行报错(sql语句建表顺序问题)

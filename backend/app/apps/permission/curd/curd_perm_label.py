@@ -1,8 +1,10 @@
 import json
 from datetime import timedelta
 from typing import Optional, Tuple, List
-
-from aioredis import Redis
+try:
+    from redis.asyncio import Redis
+except ImportError:
+    from aioredis import Redis
 from fastapi.encoders import jsonable_encoder
 from sqlalchemy.orm import Session
 from sqlalchemy import asc, desc, func, distinct

@@ -2,7 +2,10 @@ from cgitb import reset
 import email
 from email.policy import default
 from typing import Optional, Union, Any, Generator, List, Tuple, Iterable
-from aioredis import Redis
+try:
+    from redis.asyncio import Redis
+except ImportError:
+    from aioredis import Redis
 from jose import jwt
 from pydantic import ValidationError
 from fastapi import Depends, Header, Request, Cookie, Response
