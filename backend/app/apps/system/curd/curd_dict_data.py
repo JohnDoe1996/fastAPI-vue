@@ -16,7 +16,7 @@ class CURDDictData(CRUDBase):
             return {}
         dict_details = [{
             'label': detail.dict_label,
-            'value': int(detail.dict_value) if detail.dict_value.isdigit() else detail.dict_values,
+            'value': int(detail.dict_value) if detail.dict_value.isdigit() else detail.dict_value,
             'is_default': detail.is_default,
             'remark': detail.remark
         } for detail in obj.dict_detail.filter(DictDetails.is_deleted == 0)]
