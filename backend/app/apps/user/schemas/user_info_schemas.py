@@ -5,8 +5,8 @@ from pydantic import BaseModel, AnyHttpUrl, conint
 class LoginUserInfoSchema(BaseModel):
     user: str
     password: str
-    code: str
-    key: str
+    code: str = ""
+    key: str = ""
 
 
 class RegisterUserInfoSchema(BaseModel):
@@ -17,20 +17,20 @@ class RegisterUserInfoSchema(BaseModel):
     sex: int = 0
     nickname: str = ""
     avatar: str = ""
-    code: str
-    key: str
+    code: str = ""
+    key: str = ""
 
 
 class ForgetPasswordSubmitSchema(BaseModel):
     email: str
-    code: str
-    key: str
+    code: str = ""
+    key: str = ""
 
 
 class ForgetPasswordSetPasswordSchema(BaseModel):
     password: str
-    code: str
-    key: str
+    code: str = ""
+    key: str = ""
 
 
 class ChangeUserInfoSchema(BaseModel):

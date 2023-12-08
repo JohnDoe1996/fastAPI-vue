@@ -32,11 +32,12 @@ async def login(*,
                 redis: Redis = Depends(deps.get_redis),
                 user_info: user_info_schemas.LoginUserInfoSchema
                 ):
-    code = await redis.get(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{user_info.key}")  # type: bytes
-    if not code:
-        return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_INVALID)  # 验证码失效
-    elif code.decode('utf-8').lower() != user_info.code.lower():
-        return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_ERROR)  # 验证码错误
+    if settings.USE_CAPTCHA:
+        code = await redis.get(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{user_info.key}")  # type: bytes
+        if not code:
+            return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_INVALID)  # 验证码失效
+        elif code.decode('utf-8').lower() != user_info.code.lower():
+            return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_ERROR)  # 验证码错误
     user = curd_user.authenticate(db, user=user_info.user, password=user_info.password)
     if not user:
         return respErrorJson(error=error_code.ERROR_USER_PASSWORD_ERROR)
@@ -129,12 +130,13 @@ async def submitRegister(*,
                          email: EmailSender = Depends(deps.get_email_sender),
                          register_data: user_info_schemas.RegisterUserInfoSchema
                          ):
-    # 验证验证码
-    code = await redis.get(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{register_data.key}")  # type: bytes
-    if not code:
-        return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_INVALID)  # 验证码失效
-    elif code.decode('utf-8').lower() != register_data.code.lower():
-        return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_ERROR)  # 验证码错误
+    if settings.USE_CAPTCHA:
+        # 验证验证码
+        code = await redis.get(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{register_data.key}")  # type: bytes
+        if not code:
+            return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_INVALID)  # 验证码失效
+        elif code.decode('utf-8').lower() != register_data.code.lower():
+            return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_ERROR)  # 验证码错误
     # 验证信息是否已被使用
     if curd_user.getByUsername(db, username=register_data.username):
         return respErrorJson(error=error_code.ERROR_USER_USERNAME_EXISTS)
@@ -219,12 +221,13 @@ async def submitForgetPassword(*,
         await redis.incr(f"{constants.REDIS_KEY_USER_FORGET_PWD_NUM_OF_TIME}_{obj.email}")
         await redis.expire(f"{constants.REDIS_KEY_USER_FORGET_PWD_NUM_OF_TIME}_{obj.email}",
                            timedelta(minutes=constants.USER_FORGET_PWD_SUBMIT_EXPIRE_MINUTES))
-    # 验证验证码
-    code = await redis.get(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{obj.key}")  # type: bytes
-    if not code:
-        return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_INVALID)  # 验证码失效
-    elif code.decode('utf-8').lower() != obj.code.lower():
-        return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_ERROR)  # 验证码错误
+    if settings.USE_CAPTCHA:
+        # 验证验证码
+        code = await redis.get(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{obj.key}")  # type: bytes
+        if not code:
+            return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_INVALID)  # 验证码失效
+        elif code.decode('utf-8').lower() != obj.code.lower():
+            return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_ERROR)  # 验证码错误
     uuid = get_uuid()
     u = curd_user.getByEmail(db, email=obj.email)
     if not u:
@@ -245,11 +248,12 @@ async def setForgetPassword(*,
                             redis: Redis = Depends(deps.get_redis),
                             obj: user_info_schemas.ForgetPasswordSetPasswordSchema
                             ):
-    code = await redis.get(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{obj.key}")  # type: bytes
-    if not code:
-        return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_INVALID)  # 验证码失效
-    elif code.decode('utf-8').lower() != obj.code.lower():
-        return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_ERROR)  # 验证码错误
+    if settings.USE_CAPTCHA:
+        code = await redis.get(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{obj.key}")  # type: bytes
+        if not code:
+            return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_INVALID)  # 验证码失效
+        elif code.decode('utf-8').lower() != obj.code.lower():
+            return respErrorJson(error=error_code.ERROR_USER_CAPTCHA_CODE_ERROR)  # 验证码错误
     u = await redis.get(constants.REDIS_KEY_FORGET_PWD_TOKEN_KEY_PREFIX + verify_token)
     if not u:
         return respErrorJson(error=error_code.ERROR_FORGET_PWD_TOKEN_ERROR)
@@ -311,6 +315,8 @@ async def changeAvatar(*,
 async def getCaptchaCode(*,
                          redis: Redis = Depends(deps.get_redis)
                          ):
+    if not settings.USE_CAPTCHA:
+        return respSuccessJson({'key': "", 'img': ""})
     img, code = create_base64_code(k=4, img_width=150)
     key = get_uuid()
     await redis.setex(f"{constants.REDIS_KEY_USER_CAPTCHA_CODE_KEY_PREFIX}_{key}",

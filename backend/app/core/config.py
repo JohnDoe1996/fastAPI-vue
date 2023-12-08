@@ -11,6 +11,7 @@ from pydantic.env_settings import env_file_sentinel
 class Settings(BaseSettings):
     PROJECT_NAME: str   # 项目名称 必填
     SECRET_KEY: str = secrets.token_urlsafe(32)   # 登录状态token加密key, 不在配置中固定一个字符会每次运行随机生成一个导致每次重启程序都会登录过期，建议.env中配置一个固定的字符串
+    USE_CAPTCHA: bool = True
     LOGGING_CONFIG_FILE: FilePath = os.path.join(constants.BASE_DIR, 'configs/logging_config.conf')   # log格式配置文件路径
     ECHO_SQL: bool = False  # 是否打印sql语句
     AUTO_ADD_PERM_LABEL: bool = False  # 是否在访问到有权限标识的路径的时候自动添加权限标识到数据库
