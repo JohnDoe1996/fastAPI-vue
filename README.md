@@ -111,8 +111,9 @@ SOURCE init_data.sql;   -- 仅供参考
 cd ./fastAPI-vue/backend/app   # 进入到后端程序代码的根目录
 
 python3 -m virtualenv venv     # 创建虚拟环境
-
 source ./venv/bin/activate      # 进入虚拟环境
+# conda create -n fastapi-vue python=3.8.8 -y  # 或用`conda`创建并进入虚拟环境
+# conda activate fastapi-vue  # MacOS: conda -> source
 
 pip install -r requirements.txt   # 安装库  可使用谷内源：  -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
@@ -161,6 +162,8 @@ vim .env.development  # 编辑配置文件
 
 npm run dev    # 测试运行程序 
 ```
+> 如果 `npm run dev` 运行失败，提示：*code: 'ERR_OSSL_EVP_UNSUPPORTED'*。尝试先运行 Linux/MacOS:`export NODE_OPTIONS=--openssl-legacy-provider`  Windows:`set NODE_OPTIONS=--openssl-legacy-provider`  再尝试运行。
+
 
 4. 生产环境配置
 ```shell
