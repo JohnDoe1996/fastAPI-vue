@@ -40,7 +40,7 @@
           <svg-icon slot="prefix" icon-class="eye" class="el-input__icon input-icon" />
         </el-input>
       </el-form-item>
-      <el-form-item prop="code">
+      <el-form-item prop="code" v-if="useCaptcha">
         <el-input
           v-model="registerForm.code"
           auto-complete="off"
@@ -85,6 +85,7 @@ export default {
   components: {UserLayout},
   data() {
     return {
+      useCaptcha: false,
       cookiePassword: "",
       registerForm: {
         username: "",
@@ -114,7 +115,7 @@ export default {
         confirmPassword: [
           { required: true, trigger: "blur", message: "确认密码不能为空" },
         ],
-        code: [{ required: true, trigger: "change", message: "验证码不能为空" }]
+        // code: [{ required: true, trigger: "change", message: "验证码不能为空" }]
       },
       codeImg: "",
       allQuery: {},
@@ -143,8 +144,12 @@ export default {
     getCode() {
       getCaptchaCode().then( res => {
         if (res.code === 0) {
-          this.codeImg = res.data.img;
-          this.registerForm.key = res.data.key;
+          if (res.data.key) {
+            this.useCaptcha = true;
+            this.registerRules['code'] = [{required: true, message: '请输入验证码', trigger: 'blur' }];
+            this.codeImg = res.data.img;
+            this.registerForm.key = res.data.key;
+          }
         }
       })
     },

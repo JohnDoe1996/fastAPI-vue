@@ -289,7 +289,7 @@ export default {
     handleAdd() {
       this.reset()
       this.open = true
-      this.title = '添加字典类型'
+      this.title = '添加角色'
       this.getMenuTreeselect();
       getRoleMaxOrderNum().then(response => {
         this.form.order_num = response.data.max_order_num + 1

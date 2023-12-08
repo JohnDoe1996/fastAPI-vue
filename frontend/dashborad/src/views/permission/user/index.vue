@@ -53,7 +53,7 @@
       </el-form-item>
       <el-form-item label="状态" prop="status">
         <el-select v-model="queryParams.status" placeholder="用户状态" clearable size="small" style="width: 200px">
-          <el-option v-for="dict in statusOptions" :key="dict.id" :label="dict.label" :value="dict.label" />
+          <el-option v-for="dict in statusOptions" :key="dict.id" :label="dict.label" :value="dict.value" />
         </el-select>
       </el-form-item>
       <el-form-item label="创建时间">

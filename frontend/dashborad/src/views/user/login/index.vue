@@ -18,7 +18,7 @@
           <svg-icon slot="prefix" icon-class="password" class="el-input__icon input-icon"/>
         </el-input>
       </el-form-item>
-      <el-form-item prop="code">
+      <el-form-item prop="code"  v-if="useCaptcha">
         <el-input
           v-model="loginForm.code"
           auto-complete="off"
@@ -75,6 +75,7 @@ export default {
       }
     }
     return {
+      useCaptcha: false,
       loginForm: {
         user: '',
         password: '',
@@ -85,7 +86,7 @@ export default {
       loginRules: {
         user: [{ required: true, trigger: 'blur', message: "请输入用户名/邮箱" }],
         password: [{ required: true, trigger: 'blur', validator: validatePassword }],
-        code: [{required: true, message: '请输入验证码', trigger: 'blur' }],
+        // code: [{required: true, message: '请输入验证码', trigger: 'blur' }],
       },
       passwordType: 'password',
       capsTooltip: false,
@@ -118,8 +119,12 @@ export default {
     getCode() {
       getCaptchaCode().then( res => {
         if (res.code === 0) {
-          this.codeImg = res.data.img;
-          this.loginForm.key = res.data.key;
+          if (res.data.key) {
+            this.useCaptcha = true;
+            this.loginRules['code'] = [{required: true, message: '请输入验证码', trigger: 'blur' }];
+            this.codeImg = res.data.img;
+            this.loginForm.key = res.data.key;
+          }
         }
       })
     },

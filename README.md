@@ -23,12 +23,16 @@ fastAPI的性能在Python中还算挺不错的，使用起来也很方便。gith
 ![菜单管理页面](https://img-blog.csdnimg.cn/b0e4f2c111724ed5b67a2792fc284780.png)
 
 
+## 感谢大佬们的付出，下列给出大佬们基于本模板进行二次开发的框架：
+- [https://github.com/hjdhnx/fastapi_vue](https://github.com/hjdhnx/fastapi_vue)
+
 ## Demo
 
 ### URL: 
 
 - web: [http://fastapi-vue.beginner2020.top](http://fastapi-vue.beginner2020.top)
 - api-doc: [http://fastapi-vue-api.beginner2020.top/docs](http://fastapi-vue-api.beginner2020.top/docs)
+
 
 ### 账号:
 
@@ -42,6 +46,16 @@ fastAPI的性能在Python中还算挺不错的，使用起来也很方便。gith
 ## 更新日志  
 
 > 感谢各个平台中给我问题反馈和优化方案的朋友们。
+
+- 1.0.3 (20231209)
+1. 修复多处前端文字错误
+2. 修复用户状态提交参数输出
+3. 增加config、dict 的redis缓存
+4. 添加JOIN表例子(在dict_detail)
+5. 修复字典查询时非数字值报错
+6. ！在core/config.py setting中添加 USE_CAPTCHA 参数，用于是否开启登录注册等操作时候的验证码验证。(验证码加载失败可以考虑把这个值设为False)
+7. ！修改requirements.txt中captcha的版本为0.5。0.4版本可能会和新版pillow不匹配导致验证码生成失败。
+8. ！生成验证码去掉了容易混淆的字符
 
 - 1.0.2 (20231001)
 1. 修复curd_base中物理删除_in参数ids错误
@@ -87,7 +101,7 @@ SOURCE init_data.sql;   -- 仅供参考
 
 ### APP
 
-1. 安装python3、virtualenv、Nginx、 supervisor
+1. 安装python3、virtualenv、Nginx、 supervisor, 关系型数据库(代码默认是mysql), redis
 ```shell
 # 略
 ```
