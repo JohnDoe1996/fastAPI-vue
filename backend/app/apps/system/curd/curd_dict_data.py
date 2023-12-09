@@ -29,7 +29,7 @@ class CURDDictData(CRUDBase):
             'is_default': detail.is_default,
             'remark': detail.remark
         } for detail in obj.dict_detail.filter(DictDetails.is_deleted == 0)]
-        return {'id': obj['id'], 'type': obj.dict_type, 'name': obj.dict_name, 'details': dict_details}
+        return {'id': obj.id, 'type': obj.dict_type, 'name': obj.dict_name, 'details': dict_details}
 
     async def getByTypeWithCache(self, r: asyncRedis, db: Session, _type: str) -> dict:
         _key = self.CACHE_KEY + _type

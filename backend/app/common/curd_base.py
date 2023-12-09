@@ -104,7 +104,6 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         if deleter_id:
             update_data[self.model.modifier_id] = deleter_id
         obj = db.query(self.model).filter(self.model.id == _id, self.model.is_deleted != 1).update(update_data)
-        # db.delete(obj)
         db.commit()
         return obj
 
@@ -114,21 +113,20 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         if deleter_id:
             update_data[self.model.modifier_id] = deleter_id
         obj = db.query(self.model).filter(self.model.id.in_(_ids), self.model.is_deleted != 1).update(update_data)
-        # db.delete(obj)
         db.commit()
         return obj
 
     def remove(self, db: Session, *, _id: int) -> ModelType:
         """ 物理删除 """
         obj = db.query(self.model).filter(self.model.id == _id)
-        db.delete(obj)
+        db.delete(*obj)
         db.commit()
         return obj
 
     def removes(self, db: Session, *, _ids: List[int]) -> ModelType:
         """ 物理删除 """
         obj = db.query(self.model).filter(self.model.id.in_(_ids))
-        db.delete(obj)
+        db.delete(*obj)
         db.commit()
         return obj
 
