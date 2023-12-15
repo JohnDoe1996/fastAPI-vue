@@ -49,26 +49,28 @@
           icon="el-icon-plus"
           size="mini"
           @click="handleAdd"
-        >新增
+          >新增
         </el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
-          type="success"
-          icon="el-icon-edit"
-          size="mini"
-          :disabled="single"
-          @click="handleUpdate"
+        type="success"
+        icon="el-icon-edit"
+        size="mini"
+        v-hasPermi="['system:dict:put']"
+        :disabled="single"
+        @click="handleUpdate"
         >修改
         </el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
-          type="danger"
-          icon="el-icon-delete"
-          size="mini"
-          :disabled="multiple"
-          @click="handleDelete"
+        type="danger"
+        icon="el-icon-delete"
+        size="mini"
+        v-hasRole="['admin','opts']"
+        :disabled="multiple"
+        @click="handleDelete"
         >删除
         </el-button>
       </el-col>
@@ -168,6 +170,7 @@
 
 <script>
 import {getDictData, setDictData, listDictData, addDictData, delDictData, getDictDataMaxOrderNum, getDicts} from '@/api/system/dict/data'
+
 
 export default {
   name: 'DictType',

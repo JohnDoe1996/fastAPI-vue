@@ -48,6 +48,7 @@ export default {
       'phone',
       'avatar',
       'sex',
+      'roles_name',
       'roles'
     ])
   },
@@ -60,7 +61,7 @@ export default {
         username: this.username,
         nickname: this.nickname,
         phone: this.phone,
-        role: this.roles.join(' | '),
+        role: this.roles_name.join(' | '),
         email: this.email,
         avatar: this.avatar,
         sex: this.sex

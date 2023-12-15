@@ -53,8 +53,8 @@ Vue.prototype.$md5 = md5
 // 全局组件挂载
 Vue.component('Pagination', Pagination)
 // 按钮级别权限配置
-// import button_permission from './directive/button_permission'
-// Vue.use(button_permission)
+import button_permission from './directive/button_permission'
+Vue.use(button_permission)
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
