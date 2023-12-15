@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from apps import api_router
 from starlette.middleware.cors import CORSMiddleware
+from common.middleware import RequestsLoggerMiddleware
 
 from common.exceptions import customExceptions
 from core.config import settings
@@ -12,6 +13,7 @@ def createApp():
     app = FastAPI(title=settings.PROJECT_NAME)
     # set middleware
     # register_middleware(app)
+    # app.middleware("http")(RequestsLoggerMiddleware())  # http请求请求记录中间件  不需要可以注释掉，使用了可能会影响一点请求速度
     # api router
     app.include_router(api_router, prefix="/api/v1")
     # set socketio

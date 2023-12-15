@@ -1,6 +1,6 @@
 import json
 from datetime import timedelta
-from typing import Optional, Tuple, List
+from typing import Optional, Tuple, List, Union
 try:
     from redis.asyncio import Redis
 except ImportError:
@@ -69,6 +69,16 @@ class CURDPermLabel(CRUDBase):
         db_objs = [PermLabelRole(creator_id=ctl_id, role_id=i, label_id=label_id) for i in role_ids]
         db.add_all(db_objs)
         db.commit()
+        
+    def getLabelsByRolesID(self, db: Session, roles_id: Union[Tuple[int], List[int]]):
+        status_in = (0,)
+        perm_labels = [perm['label'] for perm in db
+            .query(distinct(self.model.label).label('label'))
+            .outerjoin(PermLabelRole)
+            .filter(PermLabelRole.role_id.in_(roles_id), self.model.status.in_(status_in),
+                    Roles.is_deleted == 0, PermLabelRole.is_deleted == 0)
+            .all()] if roles_id is not None else []
+        return perm_labels
 
     async def getLabelsRoleIds(self, db: Session, *, labels: Tuple[str], redis: Redis = None):
         if redis:

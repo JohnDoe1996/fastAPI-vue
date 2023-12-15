@@ -2,7 +2,6 @@ from sqlalchemy import distinct, desc, asc, func
 from sqlalchemy.orm import Session
 from apps.permission.models.menu import Menus
 from apps.permission.models.role import RoleMenu, Roles
-
 from apps.permission.models.user import Users, UserRole
 from apps.system.models import ConfigSettings
 from common.curd_base import CRUDBase

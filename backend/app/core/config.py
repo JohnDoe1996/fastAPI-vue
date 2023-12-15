@@ -6,6 +6,8 @@ from typing import Any, Dict, List, Optional, Union
 from core import constants
 from pydantic import AnyHttpUrl, BaseSettings, IPvAnyAddress, BaseModel, FilePath
 from pydantic.env_settings import env_file_sentinel
+from pymongo import MongoClient
+from urllib.parse import quote_plus
 
 
 class Settings(BaseSettings):
@@ -29,6 +31,7 @@ class Settings(BaseSettings):
     HOST: IPvAnyAddress = "0.0.0.0"     # 允许访问程序的ip， 只允许本地访问使用 127.0.0.1， 只在直接允许程序时候生效
     PORT: int = 9898    # 程序端口，只在直接运行程序的时候生效
     RELOAD: bool = True     # 是否自动重启，只在直接运行程序时候生效
+    DEBUG: bool = False     # 是否自动重启，只在直接运行程序时候生效
 
     # sql db
     SQL_USERNAME: str   # 关系型数据库用户名
@@ -62,6 +65,24 @@ class Settings(BaseSettings):
     # celery
     CELERY_BROKER: str = 'redis://127.0.0.1:6379/2'
     CELERY_BACKEND: str = 'redis://127.0.0.1:6379/3'
+    
+    # MongoDB
+    MONGODB_HOST: str = ""
+    MONGODB_PORT: Optional[int] = None
+    MONGODB_USERNAME: Optional[str] = None
+    MONGODB_PASSWORD: Optional[str] = None
+    MONGODB_DB_NAME: str = ""
+    
+    def getMongoURL(self):
+        """
+        getMongoURL 获取MongoDB链接句柄
+        """
+        u_p = quote_plus(self.MONGODB_USERNAME) if self.MONGODB_USERNAME else ""
+        if u_p:
+            u_p += f":{self.MONGODB_PASSWORD}@" if self.MONGODB_PASSWORD else "@"
+        return f"mongodb://{u_p}{self.MONGODB_HOST}" + (f":{self.MONGODB_PORT}" if self.MONGODB_PORT else "")
+        
+        
 
     # email 不填SMTP_HOST代表不使用邮箱服务， 填写后账号注册会有邮件确认
     SMTP_TLS: bool = False

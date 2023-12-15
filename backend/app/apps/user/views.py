@@ -21,6 +21,7 @@ from core import constants
 from core.config import settings
 from .schemas import user_info_schemas
 from .curd.curd_user import curd_user
+from ..permission.curd.curd_perm_label import curd_perm_label
 
 
 router = APIRouter()
@@ -86,7 +87,9 @@ async def getUserInfo(*,
                       db: Session = Depends(deps.get_db),
                       u: Users = Depends(deps.get_current_user) 
                       ):
-    roles = [role.name for role in curd_user.getRoles(db, u['id'])]
+    roles = [(role.id, role.name, role.key) for role in curd_user.getRoles(db, u['id'])]
+    roles_id, roles_name, roles_key = zip(*roles)
+    permissions = curd_perm_label.getLabelsByRolesID(db, roles_id)
     return respSuccessJson(data={
         'email': u['email'],
         'phone': u['phone'],
@@ -94,7 +97,9 @@ async def getUserInfo(*,
         'nickname': u['nickname'],
         'avatar': u['avatar'],
         'sex': u['sex'],
-        'roles': roles
+        'roles_name': roles_name,
+        'roles': roles_key if not u['is_superuser'] else (roles + ['admin']),
+        'permissions': permissions if not u['is_superuser'] else (permissions + ['*:*:*']),
     })
 
 

@@ -6,6 +6,7 @@ try:
     from redis.asyncio import Redis
 except ImportError:
     from aioredis import Redis
+import pymongo.database
 from jose import jwt
 from pydantic import ValidationError
 from fastapi import Depends, Header, Request, Cookie, Response
@@ -56,6 +57,10 @@ def get_redis(request: Request) -> Optional[Redis]:
         return redis
     return None
     
+
+def get_mongo(request: Request) -> Optional[pymongo.database.Database]:
+    return request.app.mongo
+
 
 def get_email_sender() -> Optional[EmailSender]:
     if not settings.SMTP_HOST:
