@@ -1,0 +1,94 @@
+services:
+  # 数据库（生产中优先考虑不使用docker部署数据库）
+  db:
+    image: mysql:9
+    expose:
+      - "3306"
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - "${DB_DATA}:/var/lib/mysql"
+      - "${CONF_DIR}:/docker-entrypoint-initdb.d/"
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PWD}
+    restart: unless-stopped
+    oom_score_adj: -400
+  # redis缓存
+  redis:
+    image: redis:latest
+    expose:
+      - "6379"
+    ports:
+      - "${REDIS_PORT}:6379"
+    restart: unless-stopped
+    oom_score_adj: -500
+  # NGINX和前端程序
+  server:
+    image: nginx:latest
+    ports:
+      - "${SERVER_PORT}:80"
+    volumes:
+      - ${CONF_DIR}:/etc/nginx/conf.d/
+      - ${WEB_DIR}:/usr/share/nginx/
+    restart: unless-stopped
+    oom_score_adj: -100
+  # 前端控制台程序，生产中不使用这个，最好直接全端代码打包好发布
+  dashboard:
+    image: fastapi_vue/frontend:latest
+    depends_on:
+      - app1
+      - app2
+    ports:
+      - "${DASHBPARD_PORT}:80"
+  # 后端接口程序 用2个容器模拟生产中的负载均衡
+  app1:
+    image: fastapi_vue/backend:latest
+    depends_on:
+      - redis
+      - db
+    ports:
+      - "${APP1_PORT}:8888"
+    volumes:
+      - ${APP_MEDIA_DIR}:/projects/app/media/
+      - ${APP_LOG_DIR}:/projects/app/log/
+      # - ${APP_DIR}:/projects/app/
+    restart: unless-stopped
+    oom_score_adj: 0
+    environment:
+      PROJECT_NAME: fastapi-vue
+      SECRET_KEY: DFGG45645674GHFGHFH 
+      SQL_HOST: db
+      SQL_PORT: 3306
+      SQL_USERNAME: root
+      SQL_PASSWORD: ${DB_PWD}
+      SQL_DATABASE: ${DB_NAME}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 1
+  app2:
+    image: fastapi_vue/backend:latest
+    depends_on:
+      - redis
+      - db
+    ports:
+      - "${APP2_PORT}:8888"
+    volumes:
+      - ${APP_MEDIA_DIR}:/projects/app/media/
+      - ${APP_LOG_DIR}:/projects/app/log/
+      # - ${APP_DIR}:/projects/app/
+    restart: unless-stopped
+    oom_score_adj: 0
+    environment:
+      PROJECT_NAME: fastapi-vue
+      SECRET_KEY: DFGG45645674GHFGHFH 
+      SQL_HOST: db
+      SQL_PORT: 3306
+      SQL_USERNAME: root
+      SQL_PASSWORD: ${DB_PWD}
+      SQL_DATABASE: ${DB_NAME}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 1
+      
+

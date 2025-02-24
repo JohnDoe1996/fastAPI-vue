@@ -5,7 +5,7 @@ upstream fastapi-backend {
 
 server {
     listen 80;
-    server_name localhost;
+    server_name localhost;  # 改为api的（二级）域名
     client_max_body_size 5m;
     error_log /home/ubuntu/log/nginx/fastapi-backend.error.log;
     access_log /home/ubuntu/log/nginx/fastapi-backend.access.log;
@@ -21,7 +21,7 @@ server {
 
 server {
     listen 80;
-    server_name localhost;
+    server_name localhost;  # 改为前端使用的域名
     client_max_body_size 5m;
     error_log /home/ubuntu/log/nginx/fastapi-frontend.error.log;
     access_log /home/ubuntu/log/nginx/fastapi-frontend.access.log;

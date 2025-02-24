@@ -1,0 +1,33 @@
+FROM ubuntu:22.04 
+
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# node版本高于16 需要添加此环境变量
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
+# # 使用阿里云国内apt镜像 
+# RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak \
+# && touch /etc/apt/sources.list \
+# && sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
+# && sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
+# && sed -i 's/ports.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list 
+
+# 安装必要的软件
+RUN apt-get update && apt-get install build-essential python3 python3-pip curl git make -y 
+
+# 安装nodejs npm
+RUN curl --silent --location https://deb.nodesource.com/setup_22.x | bash - \
+  && apt-get install nodejs -y
+
+# 创建代码目录和复制代码到容器内
+WORKDIR /projects
+
+COPY ./frontend/ ./
+
+# 安装程序依赖
+RUN cd /projects/dashboard/ && npm i # --registry https://registry.npm.taobao.org
+
+
+
+CMD ["/bin/bash", "-c", "cd /projects/dashboard/ && npm run dev --port=80"]

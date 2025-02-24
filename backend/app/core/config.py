@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str = "HS256"
 
     # FastAPI (Only takes effect in run "python main.py". Don't want to take effect when running with "uvicorn/gunicorn main:app")
-    HOST: IPvAnyAddress = "0.0.0.0"     # 允许访问程序的ip， 只允许本地访问使用 127.0.0.1， 只在直接允许程序时候生效
+    HOST: str = "0.0.0.0"     # 允许访问程序的ip， 只允许本地访问使用 127.0.0.1， 只在直接允许程序时候生效
     PORT: int = 9898    # 程序端口，只在直接运行程序的时候生效
     RELOAD: bool = True     # 是否自动重启，只在直接运行程序时候生效
     DEBUG: bool = False     # 是否自动重启，只在直接运行程序时候生效
@@ -36,7 +36,7 @@ class Settings(BaseSettings):
     # sql db
     SQL_USERNAME: str   # 关系型数据库用户名
     SQL_PASSWORD: Optional[str] = None  # 关系型数据库用户密码
-    SQL_HOST: Union[AnyHttpUrl, IPvAnyAddress] = "127.0.0.1"    # 关系型数据库HOST地址
+    SQL_HOST: str = "127.0.0.1"    # 关系型数据库HOST地址
     SQL_PORT: int = 3306    # 关系型数据库端口
     SQL_DATABASE: str       # 关系型数据库数据库名
     SQL_TABLE_PREFIX: Optional[str] = 't_'  # 数据库表前缀， 不需要前缀可以置空

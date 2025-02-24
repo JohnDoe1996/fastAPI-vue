@@ -8,6 +8,7 @@
 *.log.*
 
 **.yaml
+!docker-compose.yaml
 **/.DS_Store
 
 
@@ -20,3 +21,4 @@
 **/.env.*.local
  
 
+**/volumes/

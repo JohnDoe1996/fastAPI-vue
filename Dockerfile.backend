@@ -1,0 +1,30 @@
+FROM ubuntu:22.04 
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+
+# # 使用阿里云国内apt镜像 
+# RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak \
+# && touch /etc/apt/sources.list \
+# && sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
+# && sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
+# && sed -i 's/ports.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list 
+
+# 安装必要的软件
+RUN apt-get update && apt-get install python3 python3-pip -y 
+
+
+# 创建代码目录和复制代码到容器内
+WORKDIR /projects
+
+COPY ./backend/ ./
+
+# # 直接使用系统中的python  Debian 10+ 系统包含了Python，系统默认禁止直接pip防止导致与系统使用的库冲突， 下面命令解除此限制或使用虚拟环境
+# RUN mv  /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.bak
+
+# 安装程序用到的python库 
+RUN pip3 install -r /projects/app/requirements.txt  # -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+# 启动命令  gunicorn main:app --chdir /projects/app -w (程序异步数量) -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8888 --log-config ./configs/logging_config.conf "
+ENTRYPOINT ["python3", "-m", "gunicorn", "main:app", "--chdir", "/projects/app", "-w",  "2", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8888", "--log-config", "/projects/app/configs/logging_config.conf"]
